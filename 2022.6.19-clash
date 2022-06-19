@@ -5,43 +5,63 @@ mode: Rule
 log-level: info
 external-controller: :9090
 proxies:
-  - {name: "", server: 129.213.127.201, port: 23143, type: vmess, uuid: 93031651-72c8-4716-c2fa-271c95dd440d, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /}, udp: true}
-  - {name: " 2", server: 129.213.127.201, port: 443, type: vmess, uuid: e8285803-c108-43d4-b57f-29d0e42e0fd7, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, udp: true}
-  - {name: " 3", server: 129.213.127.201, port: 10048, type: vmess, uuid: a12d0773-acad-42f2-9a88-2cad2c7ef676, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /}, udp: true}
-  - {name: " 4", server: 129.213.127.201, port: 27301, type: vmess, uuid: 5148a31a-4210-4e63-d7d1-2b7af3a9a7fc, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /}, udp: true}
-  - {name: NONE, server: 129.213.127.201, port: 56301, type: trojan, password: P9dL7RMcDi, skip-cert-verify: false, udp: true}
+  - {name: 1, server: 129.213.165.55, port: 35962, type: vmess, uuid: f9f6f76d-0f21-4c54-bc61-36c565c6900e, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /}, udp: true}
+  - {name: 2, server: 129.213.165.55, port: 35500, type: vmess, uuid: 9896a33c-e018-49ce-e2a6-de54355eccb1, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /}, udp: true}
+  - {name: 3, server: 129.213.165.55, port: 40853, type: vmess, uuid: c94e55bb-3f0c-4fd1-dbb6-df16cb36f4be, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /}, udp: true}
+  - {name: 4, server: 129.213.165.55, port: 49857, type: vmess, uuid: 7b9e2b9c-5160-4cc2-b492-c0c051f7d8fc, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /}, udp: true}
+  - {name: 5, server: 129.213.165.55, port: 41797, type: vmess, uuid: a662163b-447c-442b-fc02-ffc44b63f9eb, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /}, udp: true}
+  - {name: 6, server: 129.213.165.55, port: 39922, type: vmess, uuid: 85a1ba12-4f28-49c7-8966-4e82d90fd69d, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /}, udp: true}
+  - {name: 7, server: 129.213.165.55, port: 29009, type: vmess, uuid: 7a90a12d-e814-45c5-ee35-220e911e5ebb, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, udp: true}
+  - {name: 8, server: 129.213.165.55, port: 16876, type: vmess, uuid: dad3af45-0967-4f75-a066-77c227962691, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /}, udp: true}
+  - {name: 9, server: 129.213.165.55, port: 48560, type: vmess, uuid: af8c821d-5f84-4eaa-dd9f-9ee9dbe4c017, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, udp: true}
+  - {name: 10, server: 129.213.165.55, port: 11769, type: vmess, uuid: e2b65427-81ce-4b38-db06-da4a9d9342ce, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /}, udp: true}
 proxy-groups:
   - name: 🔰 节点选择
     type: select
     proxies:
       - ♻️ 自动选择
       - 🎯 全球直连
-      - ""
-      - " 2"
-      - " 3"
-      - " 4"
-      - NONE
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      - 7
+      - 8
+      - 9
+      - 10
   - name: ♻️ 自动选择
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - ""
-      - " 2"
-      - " 3"
-      - " 4"
-      - NONE
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      - 7
+      - 8
+      - 9
+      - 10
   - name: 🎥 NETFLIX
     type: select
     proxies:
       - 🔰 节点选择
       - ♻️ 自动选择
       - 🎯 全球直连
-      - ""
-      - " 2"
-      - " 3"
-      - " 4"
-      - NONE
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      - 7
+      - 8
+      - 9
+      - 10
   - name: ⛔️ 广告拦截
     type: select
     proxies:
@@ -60,11 +80,16 @@ proxy-groups:
       - 🔰 节点选择
       - ♻️ 自动选择
       - 🎯 全球直连
-      - ""
-      - " 2"
-      - " 3"
-      - " 4"
-      - NONE
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      - 7
+      - 8
+      - 9
+      - 10
   - name: 🌏 国内媒体
     type: select
     proxies:
@@ -75,32 +100,47 @@ proxy-groups:
     proxies:
       - 🎯 全球直连
       - 🔰 节点选择
-      - ""
-      - " 2"
-      - " 3"
-      - " 4"
-      - NONE
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      - 7
+      - 8
+      - 9
+      - 10
   - name: 📲 电报信息
     type: select
     proxies:
       - 🔰 节点选择
       - 🎯 全球直连
-      - ""
-      - " 2"
-      - " 3"
-      - " 4"
-      - NONE
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      - 7
+      - 8
+      - 9
+      - 10
   - name: 🍎 苹果服务
     type: select
     proxies:
       - 🔰 节点选择
       - 🎯 全球直连
       - ♻️ 自动选择
-      - ""
-      - " 2"
-      - " 3"
-      - " 4"
-      - NONE
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      - 7
+      - 8
+      - 9
+      - 10
   - name: 🎯 全球直连
     type: select
     proxies:
@@ -116,11 +156,16 @@ proxy-groups:
       - 🔰 节点选择
       - 🎯 全球直连
       - ♻️ 自动选择
-      - ""
-      - " 2"
-      - " 3"
-      - " 4"
-      - NONE
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      - 7
+      - 8
+      - 9
+      - 10
 rules:
  - DOMAIN-SUFFIX,local,🎯 全球直连
  - IP-CIDR,192.168.0.0/16,🎯 全球直连,no-resolve
